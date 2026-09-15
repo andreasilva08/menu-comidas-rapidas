@@ -4,29 +4,31 @@
     <!-- ANNOUNCEMENT BAR SUPERIOR (BARRA NARANJA FIJA) -->
     <!-- ============================================== -->
     <div
-      class="announcement-bar text-black text-center q-py-xs q-px-md row items-center justify-between no-wrap"
-      style="background-color: #FF9F0D; font-size: 13px; z-index: 2001; min-height: 38px;"
+      class="announcement-bar text-black text-center q-py-xs q-px-md"
+      style="background-color: #FF9F0D; font-size: 13px; z-index: 2001; min-height: 40px;"
     >
-      <div class="col text-center row items-center justify-center no-wrap">
-        <q-icon name="campaign" size="18px" class="q-mr-xs text-dark" />
-        <span class="text-weight-bolder tracking-wide text-uppercase" style="letter-spacing: 0.5px;">
-          ¡PARA DISEÑO WEB MODERNO, CONTÁCTANOS!
-        </span>
-      </div>
-
-      <q-btn
-        unelevated
-        dense
-        rounded
-        class="text-weight-bolder text-white q-px-md q-py-none shadow-2 hover:scale-105 transition"
-        style="background-color: #0E0E11; font-size: 11px; height: 26px; border-radius: 9999px;"
-        @click="isContactModalOpen = true"
-      >
-        <div class="row items-center no-wrap">
-          <span>HABLEMOS</span>
-          <q-icon name="arrow_forward" size="14px" class="q-ml-xs" />
+      <div class="max-w-7xl mx-auto row items-center justify-between no-wrap full-width">
+        <div class="col text-center row items-center justify-center no-wrap">
+          <q-icon name="campaign" size="20px" class="q-mr-xs text-dark" />
+          <span class="text-weight-bolder tracking-wide text-uppercase" style="letter-spacing: 0.5px; font-size: 13px;">
+            ¡PARA DISEÑO WEB MODERNO, CONTÁCTANOS!
+          </span>
         </div>
-      </q-btn>
+
+        <q-btn
+          unelevated
+          dense
+          rounded
+          class="text-weight-bolder text-white q-px-md q-py-none shadow-2 hover:scale-105 transition"
+          style="background-color: #0E0E11; font-size: 12px; height: 28px; border-radius: 9999px;"
+          @click="isContactModalOpen = true"
+        >
+          <div class="row items-center no-wrap">
+            <span>HABLEMOS</span>
+            <q-icon name="arrow_forward" size="14px" class="q-ml-xs" />
+          </div>
+        </q-btn>
+      </div>
     </div>
 
     <!-- ============================================== -->
@@ -37,32 +39,35 @@
       class="text-white relative-position"
       style="background-color: #0E0E11; border-bottom: 1px solid rgba(255, 255, 255, 0.08);"
     >
-      <q-toolbar class="q-py-sm q-px-md max-w-7xl mx-auto full-width">
-        <!-- Botón Menú Móvil -->
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Abrir menú"
-          class="lt-md q-mr-sm"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+      <q-toolbar class="header-toolbar q-py-md q-px-md max-w-7xl mx-auto full-width items-center relative-position">
+        <!-- ZONA 1 (IZQUIERDA): LOGO Y BOTÓN MÓVIL -->
+        <div class="header-left row items-center no-wrap">
+          <!-- Botón Menú Móvil -->
+          <q-btn
+            flat
+            dense
+            round
+            icon="menu"
+            aria-label="Abrir menú"
+            class="lt-md q-mr-sm"
+            @click="leftDrawerOpen = !leftDrawerOpen"
+          />
 
-        <!-- LOGO BURGERBYTE -->
-        <router-link to="/" class="row items-center no-wrap text-decoration-none text-white q-mr-lg">
-          <div class="brand-badge q-pa-xs rounded q-mr-xs flex flex-center" style="background-color: #FF9F0D; border-radius: 8px;">
-            <q-icon name="lunch_dining" size="24px" color="dark" />
-          </div>
-          <div class="brand-text">
-            <span class="text-h6 text-weight-bolder tracking-tighter" style="font-family: 'Montserrat', sans-serif;">
-              BURGER<span style="color: #FF9F0D;">BYTE</span>
-            </span>
-          </div>
-        </router-link>
+          <!-- LOGO BURGERBYTE -->
+          <router-link to="/" class="row items-center no-wrap text-decoration-none text-white">
+            <div class="brand-badge q-pa-xs rounded q-mr-xs flex flex-center" style="background-color: #FF9F0D; border-radius: 8px;">
+              <q-icon name="lunch_dining" size="26px" color="dark" />
+            </div>
+            <div class="brand-text">
+              <span class="text-h5 text-weight-bolder tracking-tighter" style="font-family: 'Montserrat', sans-serif;">
+                BURGER<span style="color: #FF9F0D;">BYTE</span>
+              </span>
+            </div>
+          </router-link>
+        </div>
 
-        <!-- NAVEGACIÓN DESKTOP -->
-        <div class="gt-sm row items-center q-gutter-x-md text-weight-bold" style="font-size: 14px;">
+        <!-- ZONA 2 (CENTRO): MENÚ HORIZONTALMENTE CENTRADO EN LA PANTALLA -->
+        <nav class="header-center gt-sm row items-center justify-center no-wrap text-weight-bold">
           <router-link
             to="/"
             class="nav-link text-white hover:text-amber-5 transition"
@@ -79,37 +84,38 @@
             label="Menú"
             class="nav-link text-weight-bold text-white hover:text-amber-5"
             content-class="bg-dark text-white rounded-borders shadow-8 border border-grey-8"
+            style="font-size: 16.5px;"
           >
-            <q-list style="min-width: 190px; background-color: #16161A;">
+            <q-list style="min-width: 210px; background-color: #16161A;">
               <q-item clickable v-close-popup to="/hamburguesas">
                 <q-item-section avatar>
                   <q-icon name="lunch_dining" color="amber-8" />
                 </q-item-section>
-                <q-item-section class="text-white text-weight-bold">Hamburguesas</q-item-section>
+                <q-item-section class="text-white text-weight-bold" style="font-size: 16px;">Hamburguesas</q-item-section>
               </q-item>
               <q-item clickable v-close-popup to="/perros">
                 <q-item-section avatar>
                   <q-icon name="ramen_dining" color="amber-8" />
                 </q-item-section>
-                <q-item-section class="text-white text-weight-bold">Perros Calientes</q-item-section>
+                <q-item-section class="text-white text-weight-bold" style="font-size: 16px;">Perros Calientes</q-item-section>
               </q-item>
               <q-item clickable v-close-popup to="/pizzas">
                 <q-item-section avatar>
                   <q-icon name="local_pizza" color="amber-8" />
                 </q-item-section>
-                <q-item-section class="text-white text-weight-bold">Pizzas a la Piedra</q-item-section>
+                <q-item-section class="text-white text-weight-bold" style="font-size: 16px;">Pizzas a la Piedra</q-item-section>
               </q-item>
               <q-item clickable v-close-popup to="/bebidas">
                 <q-item-section avatar>
                   <q-icon name="local_cafe" color="amber-8" />
                 </q-item-section>
-                <q-item-section class="text-white text-weight-bold">Bebidas & Malteadas</q-item-section>
+                <q-item-section class="text-white text-weight-bold" style="font-size: 16px;">Bebidas & Malteadas</q-item-section>
               </q-item>
               <q-item clickable v-close-popup to="/postres">
                 <q-item-section avatar>
                   <q-icon name="icecream" color="amber-8" />
                 </q-item-section>
-                <q-item-section class="text-white text-weight-bold">Postres & Waffles</q-item-section>
+                <q-item-section class="text-white text-weight-bold" style="font-size: 16px;">Postres & Waffles</q-item-section>
               </q-item>
             </q-list>
           </q-btn-dropdown>
@@ -124,10 +130,10 @@
 
           <router-link
             to="/promociones"
-            class="nav-link text-white hover:text-amber-5 transition row items-center"
+            class="nav-link text-white hover:text-amber-5 transition row items-center no-wrap"
           >
             <span>Ofertas</span>
-            <q-badge color="negative" text-color="white" label="¡Top!" class="q-ml-xs text-caption" style="font-size: 10px;" />
+            <q-badge color="negative" text-color="white" label="¡Top!" class="q-ml-xs text-caption" style="font-size: 11px; padding: 2px 6px;" />
           </router-link>
 
           <router-link
@@ -145,77 +151,61 @@
           >
             Contacto
           </router-link>
-        </div>
+        </nav>
 
+        <!-- ESPACIADOR FLEX PARA ALINEAR LA ZONA DERECHA AL FINAL -->
         <q-space />
 
-        <!-- CAMPO DE BÚSQUEDA (Q-INPUT CON ÍCONO) -->
-        <div class="search-box gt-xs q-mr-sm" style="width: 220px; max-width: 28vw;">
-          <q-input
-            v-model="searchQuery"
+        <!-- ZONA 3 (DERECHA): BUSCADOR, FAVORITOS, CARRITO Y PEDIR AHORA -->
+        <div class="header-right row items-center justify-end no-wrap q-gutter-x-sm">
+          
+
+          <!-- BOTÓN DE FAVORITOS -->
+          <q-btn
+            flat
+            round
             dense
-            dark
-            outlined
-            rounded
-            placeholder="Buscar delicias..."
-            class="search-input"
-            bg-color="grey-10"
-            @keyup.enter="handleSearch"
+            icon="favorite"
+            color="red-5"
+            aria-label="Ver favoritos"
+            class="gt-xs"
+            @click="showFavoritesNotification"
           >
-            <template v-slot:prepend>
-              <q-icon name="search" size="18px" color="amber-8" />
-            </template>
-            <template v-if="searchQuery" v-slot:append>
-              <q-icon name="close" size="16px" class="cursor-pointer" @click="searchQuery = ''" />
-            </template>
-          </q-input>
+            <q-badge v-if="favorites.size > 0" color="red-7" floating rounded>
+              {{ favorites.size }}
+            </q-badge>
+          </q-btn>
+
+          <!-- BOTÓN DE CARRITO CON BADGE -->
+          <q-btn
+            flat
+            round
+            dense
+            icon="shopping_bag"
+            color="white"
+            aria-label="Abrir carrito"
+            class="hover:text-amber-8"
+            @click="isCartOpen = true"
+          >
+            <q-badge v-if="cartCount > 0" color="amber-9" text-color="dark" floating rounded class="text-weight-bolder">
+              {{ cartCount }}
+            </q-badge>
+          </q-btn>
+
+          <!-- BOTÓN CTA DORADO "PEDIR AHORA" -->
+          <q-btn
+            unelevated
+            rounded
+            class="order-now-btn text-weight-bolder shadow-3 q-px-md q-py-xs"
+            style="background-color: #FF9F0D; color: #0E0E11; border-radius: 9999px; font-size: 15.5px;"
+            @click="isCartOpen = true"
+          >
+            <div class="row items-center no-wrap">
+              <span>Pedir Ahora</span>
+              <q-icon name="arrow_forward" size="18px" class="q-ml-xs" />
+            </div>
+          </q-btn>
         </div>
-
-        <!-- BOTÓN DE FAVORITOS -->
-        <q-btn
-          flat
-          round
-          dense
-          icon="favorite"
-          color="red-5"
-          aria-label="Ver favoritos"
-          class="q-mr-xs gt-xs"
-          @click="showFavoritesNotification"
-        >
-          <q-badge v-if="favorites.size > 0" color="red-7" floating rounded>
-            {{ favorites.size }}
-          </q-badge>
-        </q-btn>
-
-        <!-- BOTÓN DE CARRITO CON BADGE -->
-        <q-btn
-          flat
-          round
-          dense
-          icon="shopping_bag"
-          color="white"
-          aria-label="Abrir carrito"
-          class="q-mr-sm hover:text-amber-8"
-          @click="isCartOpen = true"
-        >
-          <q-badge v-if="cartCount > 0" color="amber-9" text-color="dark" floating rounded class="text-weight-bolder">
-            {{ cartCount }}
-          </q-badge>
-        </q-btn>
-
-        <!-- BOTÓN CTA DORADO "PEDIR AHORA" -->
-        <q-btn
-          unelevated
-          rounded
-          class="order-now-btn text-weight-bolder shadow-3 q-px-md q-py-xs"
-          style="background-color: #FF9F0D; color: #0E0E11; border-radius: 9999px; font-size: 13px;"
-          @click="isCartOpen = true"
-        >
-          <div class="row items-center no-wrap">
-            <span>Pedir Ahora</span>
-            <q-icon name="arrow_forward" size="16px" class="q-ml-xs" />
-          </div>
-        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -450,6 +440,50 @@ const openWhatsAppContact = () => {
 </script>
 
 <style>
+/* Estilos del Header y distribución en 3 zonas */
+.header-toolbar {
+  position: relative;
+  min-height: 70px;
+}
+
+.header-left {
+  position: relative;
+  z-index: 6;
+}
+
+/* Zona Central: Matemáticamente centrada en la pantalla */
+.header-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 22px;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+@media (max-width: 1280px) {
+  .header-center {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .header-center {
+    gap: 10px;
+  }
+}
+
+.header-right {
+  position: relative;
+  z-index: 6;
+  margin-left: auto;
+}
+
 /* Estilos globales y reset */
 body {
   font-family: 'Montserrat', sans-serif;
@@ -465,7 +499,14 @@ body {
 .nav-link {
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  font-size: 16.5px;
+  letter-spacing: 0.2px;
+  padding: 4px 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
 }
 
 .order-now-btn:hover {
