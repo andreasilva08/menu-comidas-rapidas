@@ -1,0 +1,6 @@
+{
+  "name": "BurgerByte - Menú Digital",
+  "description": "Menú Digital de Comidas Rápidas BurgerByte desarrollado con Vue 3, Quasar Framework y Vue Router.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
